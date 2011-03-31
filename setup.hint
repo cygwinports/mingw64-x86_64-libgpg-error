@@ -1,0 +1,3 @@
+category: Devel
+requires: mingw64-x86_64-runtime
+sdesc: "libgpg-error for MinGW-w64 Win64 toolchain"
