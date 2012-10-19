@@ -1,0 +1,13 @@
+http://savannah.gnu.org/support/?107959
+
+--- origsrc/libgpg-error-1.10/src/Makefile.am	2010-09-16 08:09:17.000000000 -0500
++++ src/libgpg-error-1.10/src/Makefile.am	2012-08-30 00:25:03.564519700 -0500
+@@ -162,7 +162,7 @@ endif
+ gpg-error.def: Makefile gpg-error.def.in
+ 	cat $(srcdir)/gpg-error.def.in >_$@.h
+ 	$(CPP) $(DEFAULT_INCLUDES) $(INCLUDES) $(extra_cppflags) _$@.h | \
+-	  grep -v '^#' >$@
++	  grep -v '^\(#\|$$\)' >$@
+ 	-rm _$@.h
+ 
+ # It is correct to use $(CC_FOR_BUILD) here.  We want to run the
