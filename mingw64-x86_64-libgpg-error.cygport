@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libgpg-error"
-VERSION=1.18
+VERSION=1.19
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="libgpg-error for Win64 toolchain"
@@ -20,4 +20,4 @@ DISTCLEANFILES="potomo"
 
 # setup requires static library
 CYGCONF_ARGS="--enable-static"
-MAKEOPTS+=" bin_PROGRAMS=  dist_clfiles_DATA=  nodist_clfiles_DATA= "
+MAKEOPTS+=" bin_PROGRAMS= INFO_DEPS= man_MANS= dist_clfiles_DATA= nodist_clfiles_DATA= "
