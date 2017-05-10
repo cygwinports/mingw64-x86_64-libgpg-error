@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libgpg-error"
-VERSION=1.24
+VERSION=1.27
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="libgpg-error for Win64 toolchain"
@@ -15,9 +15,10 @@ SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2
 SRC_DIR="libgpg-error-${VERSION}"
 PATCH_URI="01-def-syntax.patch"
 
+DIFF_EXCLUDES="VERSION *.asd"
 # hack to prevent locale installation
 DISTCLEANFILES="potomo"
 
 # setup requires static library
 CYGCONF_ARGS="--enable-static"
-MAKEOPTS+=" bin_PROGRAMS= INFO_DEPS= man_MANS= dist_clfiles_DATA= nodist_clfiles_DATA= "
+MAKEOPTS+=" bin_PROGRAMS= INFO_DEPS= man_MANS= dist_clfiles_DATA= nodist_clfiles_DATA= pkgdatadir=/usr/share/doc/${NAME}"
