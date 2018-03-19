@@ -1,0 +1,22 @@
+--- origsrc/libgpg-error-1.28/src/gpgrt-int.h	2017-11-29 13:27:22.000000000 -0600
++++ src/libgpg-error-1.28/src/gpgrt-int.h	2018-03-19 14:50:27.311444500 -0500
+@@ -23,6 +23,7 @@
+ 
+ #include "gpg-error.h"
+ #include "visibility.h"
++#include <sys/types.h>
+ 
+ /*
+  * Internal i18n macros.
+--- origsrc/libgpg-error-1.28/src/w32-add.h	2017-11-29 13:27:23.000000000 -0600
++++ src/libgpg-error-1.28/src/w32-add.h	2018-03-19 14:35:28.632514200 -0500
+@@ -5,7 +5,9 @@
+ 
+ /* Fixme: This is a quick hack.  We need to check whether the compiler
+  * actually in use already knows that type.  */
++#ifndef __MINGW64_VERSION_MAJOR
+ typedef int pid_t;
++#endif
+ 
+ /* Decide whether to use the format_arg attribute.  */
+ #if _GPG_ERR_GCC_VERSION > 20800

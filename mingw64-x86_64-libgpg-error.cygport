@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-libgpg-error"
-VERSION=1.27
+VERSION=1.28
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="libgpg-error for Win64 toolchain"
@@ -13,7 +13,10 @@ mingw64-x86_64-gcc cross compiler, and installs into the
 HOMEPAGE="http://www.gnupg.org/related_software/libgpg-error/"
 SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-${VERSION}.tar.bz2"
 SRC_DIR="libgpg-error-${VERSION}"
-PATCH_URI="01-def-syntax.patch"
+PATCH_URI="
+	01-def-syntax.patch
+	1.28-mingw64-pid_t.patch
+"
 
 DIFF_EXCLUDES="VERSION *.asd"
 # hack to prevent locale installation
